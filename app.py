@@ -93,15 +93,15 @@ if __name__ == '__main__':
 
 	st.markdown('**B.** Are there significant changes in the infrastructure in the metropolitan transport network?')
         
-	st.markdown('**R.** It\'s need verify!')
+	st.markdown('**R.** -------')
 
 	st.markdown('**C.** What\'s the reason for the increasing in passenger transported demand in lines 5 and 15?')
         
-	st.markdown('**R.** There are a big number of inaugurations of new stations for these lines.')
+	st.markdown('**R.** There are a big number of inaugurations of new stations for these lines, it can be a good reason.')
         
 	st.markdown('**D.** What can be caused by participation decreases of demand in lines 1 and 3 ?')
         
-	st.markdown('**R.** It\'s need verify!')
+	st.markdown('**R.** -------')
 
 	st.markdown('**E.** If the main lines are decreasing the demand, is there the possibility ' 
          'of other lines taking these positions in the next years?')
