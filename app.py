@@ -54,6 +54,20 @@ if __name__ == '__main__':
 	st.subheader('Monthly participation in total of demand (in %) by line')
 	option_graph_02 = st.selectbox(label='Line', options=[1, 2, 3, 4, 5, 15], index=0)
 	participation_measurement(option_graph_02, df, totals)
+
+	st.text('Questions:')
+	st.text('A. What can be caused by participation decreases of demand in lines 1 and 3,\n' 
+         	'are there significant changes in the infrastructure of the subway\n' 
+             '(new station or lines)?')
+    
+	st.text('B. What\'s the reason for the increasing in passenger transported demand\n' 
+         'in lines 5 and 15?')
+
+	st.text('C. If the main lines are decreasing the demand, is there the possibility\n' 
+         'of other lines taking these positions in the next years?')
+        
+	st.text('D. Is this a new pattern or when the subway rescues the level of\n' 
+         'passenger demand near of previous COVID pandemic the old pattern will return?')
 	
 	st.subheader('infrastructure changes - New stations in the subway')
 	
@@ -72,13 +86,7 @@ if __name__ == '__main__':
 	line_15_df = pd.DataFrame(line_15)
 	st.write(line_15_df)
         
-	st.text('Questions:')
-	st.text('A. What can be caused by participation decreases of demand in lines 1 and 3,\n' 
-         	'are there significant changes in the infrastructure of the subway\n' 
-             '(new station or lines)?')
-    
-	st.text('B. What\'s the reason for the increasing in passenger transported demand\n' 
-         'in lines 5 and 15?')
+
 
 	st.text('')
         
