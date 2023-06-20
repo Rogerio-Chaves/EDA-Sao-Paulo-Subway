@@ -51,17 +51,18 @@ if __name__ == '__main__':
 	most_participation(df, totals)
 	st.markdown('Question:')
 	st.markdown('If the monthly share of the two lines with the highest passenger demand is decreasing over time, is there any possibility that other lines are growing?')
+	st.markdown('Below we can verify the share of each line.')
 
 	st.subheader('Monthly participation in total of demand (in %) by line')
 	option_graph_02 = st.selectbox(label='Line', options=[1, 2, 3, 4, 5, 15], index=0)
 	participation_measurement(option_graph_02, df, totals)
 
 	st.markdown('Questions:')
-	st.markdown('<b>A.</b> What can be caused by participation decreases of demand in lines 1 and 3, ' 
+	st.markdown('**A.** What can be caused by participation decreases of demand in lines 1 and 3, ' 
          	'are there significant changes in the infrastructure of the subway ' 
              '(new station or lines)?')
     
-	st.markdown('<i>R.</i> infrastructure changes - New stations in the subway')
+	st.markdown('**R.** infrastructure changes - New stations in the subway')
         
 	st.markdown('Line 1 - No changes')
 
