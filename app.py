@@ -57,13 +57,13 @@ if __name__ == '__main__':
 	option_graph_02 = st.selectbox(label='Line', options=[1, 2, 3, 4, 5, 15], index=0)
 	participation_measurement(option_graph_02, df, totals)
 
-	st.markdown('As we can see,\n'
-		'Line 1 - blue has kept the same participation after the COVID period. Although, it has decreased in the previous period.\n'
-		'Line 2 - green, after the fall caused by the COVID pandemic, recovered the participation level previous.\n'
-		'Line 3 - red is decreasing, inclusive with this pattern before of COVID pandemic.\n'
-		'Line 4 - yellow, after the COVID period shows a growing pattern in demand for passengers in your line.\n'
-		'Line 5 - lilac kept a growing pattern until the begun 2021, next it has slowly decreasing.\n'
-		'Finally, line 15 - silver has a growing pattern in this period. Although, the participation of this line is small yet.')
+	st.markdown('As we can see, '
+		'**Line 1 - blue** has kept the same participation after the COVID period. Although, it has decreased in the previous period. '
+		'**Line 2 - green**, after the fall caused by the COVID pandemic, recovered the participation level previous. '
+		'**Line 3 - red** is decreasing, inclusive with this pattern before of COVID pandemic. '
+		'**Line 4 - yellow**, after the COVID period shows a growing pattern in demand for passengers in your line. '
+		'**Line 5 - lilac** kept a growing pattern until the begun 2021, next it has slowly decreasing. '
+		'Finally, **line 15 - silver** has a growing pattern in this period. Although, the participation of this line is small yet.')
 
 	st.markdown('Questions:')
 	st.markdown('**A.** What can be caused by participation decreases of demand in lines 1 and 3, ' 
