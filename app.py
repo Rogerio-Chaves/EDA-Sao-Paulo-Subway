@@ -61,18 +61,24 @@ if __name__ == '__main__':
              '(new station or lines)?')
     
 	st.text('R. infrastructure changes - New stations in the subway')
+        
+	st.text('Line 1 - No changes')
+
+	st.text('Line 2 - No changes')
+
+	st.text('Line 3 - No changes')
 	
-	st.text('Line 4 - Yellow')
+	st.text('Line 4 - 4 new stations')
 	line_04 = {'Station': ['São Paulo - Morumbi', 'Higienópolis - Mackenzie', 'Oscar Freire', 'Vila Sônia'], 'Inauguration': ['December 27, 2018', 'January 23, 2018', 'April 4, 2018', 'December 17, 2021']}
 	line_04_df = pd.DataFrame(line_04)
 	st.write(line_04_df)
 	
-	st.text('Line 5 - Lilac')
+	st.text('Line 5 - 10 new stations')
 	line_05 = {'Station':['Alto da Boa Vista', 'Borba Gato', 'Brooklin', 'Eucaliptos', 'Moema', 'Hospital São Paulo', 'Santa Cruz', 'Chácara Kablin', 'AACD - Servidor', 'Campo Belo'], 'Inauguration': ['September 6, 2017', 'September 6, 2017', 'September 6, 2017', 'March 2, 2018', 'April 5, 2018', 'September 28, 2018', 'September 28, 2018', 'September 28, 2018', 'August 31, 2018', 'April 8, 2019']}
 	line_05_df = pd.DataFrame(line_05)
 	st.write(line_05_df)
 	
-	st.text('Line 15 - Silver')
+	st.text('Line 15 - 9 new stations')
 	line_15 = {'Station':['São Lucas', 'Camilo Haddad', 'Vila Tolstói', 'Vila União', 'jardim Planalto', 'Sapopemba', 'Fazenda da Juta', 'São Mateus', 'jardim Colonial'], 'Inauguration':['April 6, 2018', 'April 6, 2018', 'April 6, 2018', 'April 6, 2018 ', 'August 26, 2019', 'December 16, 2019', 'December 16, 2019', 'December 16, 2019', 'December 16, 2021']}
 	line_15_df = pd.DataFrame(line_15)
 	st.write(line_15_df)
