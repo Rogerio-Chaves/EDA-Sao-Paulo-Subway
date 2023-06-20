@@ -90,20 +90,25 @@ if __name__ == '__main__':
 	line_15 = {'Station':['São Lucas', 'Camilo Haddad', 'Vila Tolstói', 'Vila União', 'jardim Planalto', 'Sapopemba', 'Fazenda da Juta', 'São Mateus', 'jardim Colonial'], 'Inauguration':['April 6, 2018', 'April 6, 2018', 'April 6, 2018', 'April 6, 2018 ', 'August 26, 2019', 'December 16, 2019', 'December 16, 2019', 'December 16, 2019', 'December 16, 2021']}
 	line_15_df = pd.DataFrame(line_15)
 	st.write(line_15_df)
+
+	st.markdown('**B.** Are there significant changes in the infrastructure in the metropolitan transport network?')
         
-	st.markdown('**B.** What\'s the reason for the increasing in passenger transported demand ' 
-         'in lines 5 and 15?')
+	st.markdown('**R.** It\'s need verify!')
+
+	st.markdown('**C.** What\'s the reason for the increasing in passenger transported demand in lines 5 and 15?')
         
 	st.markdown('**R.** There are a big number of inaugurations of new stations for these lines.')
         
-	st.markdown('**C.** What can be caused by participation decreases of demand in lines 1 and 3 ?')
+	st.markdown('**D.** What can be caused by participation decreases of demand in lines 1 and 3 ?')
+        
+	st.markdown('**R.** It\'s need verify!')
 
-	st.markdown('**D.** If the main lines are decreasing the demand, is there the possibility ' 
+	st.markdown('**E.** If the main lines are decreasing the demand, is there the possibility ' 
          'of other lines taking these positions in the next years?')
 
 	st.markdown('**R.** Modelling task.')
         
-	st.markdown('**E.** Is this a new pattern or when the subway rescues the level of ' 
+	st.markdown('**F.** Is this a new pattern or when the subway rescues the level of ' 
          'passenger demand near of previous COVID pandemic the old pattern will return?')
         
 	st.markdown('**R.** Modelling task.')
