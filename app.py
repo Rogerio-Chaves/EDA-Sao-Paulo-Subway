@@ -32,7 +32,7 @@ if __name__ == '__main__':
 	st.title('Passanger transported demand by lines - São Paulo Subway')
 	st.text('From January 2017 to April 2023')
 
-	DATA_PATH = 'alllines_ptl_complete.csv'
+	DATA_PATH = 'ptl_complete.csv'
 
 	data_load_state = st.text('Loading data...')
 	df = load_data(DATA_PATH)
