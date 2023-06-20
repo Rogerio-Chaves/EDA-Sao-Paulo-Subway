@@ -60,16 +60,7 @@ if __name__ == '__main__':
          	'are there significant changes in the infrastructure of the subway\n' 
              '(new station or lines)?')
     
-	st.text('B. What\'s the reason for the increasing in passenger transported demand\n' 
-         'in lines 5 and 15?')
-
-	st.text('C. If the main lines are decreasing the demand, is there the possibility\n' 
-         'of other lines taking these positions in the next years?')
-        
-	st.text('D. Is this a new pattern or when the subway rescues the level of\n' 
-         'passenger demand near of previous COVID pandemic the old pattern will return?')
-	
-	st.subheader('infrastructure changes - New stations in the subway')
+	st.text('R. infrastructure changes - New stations in the subway')
 	
 	st.text('Line 4 - Yellow')
 	line_04 = {'Station': ['São Paulo - Morumbi', 'Higienópolis - Mackenzie', 'Oscar Freire', 'Vila Sônia'], 'Inauguration': ['December 27, 2018', 'January 23, 2018', 'April 4, 2018', 'December 17, 2021']}
@@ -86,7 +77,12 @@ if __name__ == '__main__':
 	line_15_df = pd.DataFrame(line_15)
 	st.write(line_15_df)
         
+	st.text('B. What\'s the reason for the increasing in passenger transported demand\n' 
+         'in lines 5 and 15?')
 
-
-	st.text('')
+	st.text('C. If the main lines are decreasing the demand, is there the possibility\n' 
+         'of other lines taking these positions in the next years?')
         
+	st.text('D. Is this a new pattern or when the subway rescues the level of\n' 
+         'passenger demand near of previous COVID pandemic the old pattern will return?')
+	
