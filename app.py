@@ -90,6 +90,6 @@ if __name__ == '__main__':
 	st.markdown('<b>C.</b> If the main lines are decreasing the demand, is there the possibility ' 
          'of other lines taking these positions in the next years?')
         
-	st.markdown('<b>D.</b> Is this a new pattern or when the subway rescues the level of ' 
+	st.markdown(':bold[D.] Is this a new pattern or when the subway rescues the level of ' 
          'passenger demand near of previous COVID pandemic the old pattern will return?')
 	
