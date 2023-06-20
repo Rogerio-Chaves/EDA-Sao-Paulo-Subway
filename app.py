@@ -66,9 +66,7 @@ if __name__ == '__main__':
 		'Finally, **line 15 - silver** has a growing pattern in this period. Although, the participation of this line is small yet.')
 
 	st.markdown('Questions:')
-	st.markdown('**A.** What can be caused by participation decreases of demand in lines 1 and 3, ' 
-         	'are there significant changes in the infrastructure of the subway ' 
-             '(new station or lines)?')
+	st.markdown('**A.** Are there significant changes in the infrastructure of the subway (new station or lines)?')
     
 	st.markdown('**R.** infrastructure changes - New stations in the subway')
         
@@ -95,10 +93,18 @@ if __name__ == '__main__':
         
 	st.markdown('**B.** What\'s the reason for the increasing in passenger transported demand ' 
          'in lines 5 and 15?')
-
-	st.markdown('**C.** If the main lines are decreasing the demand, is there the possibility ' 
-         'of other lines taking these positions in the next years?')
         
-	st.markdown('**D.** Is this a new pattern or when the subway rescues the level of ' 
+	st.markdown('**R.** There are a big number of inaugurations of new stations for these lines.')
+        
+	st.markdown('**C.** What can be caused by participation decreases of demand in lines 1 and 3 ?')
+
+	st.markdown('**D.** If the main lines are decreasing the demand, is there the possibility ' 
+         'of other lines taking these positions in the next years?')
+
+	st.markdown('**R.** Modelling task.')
+        
+	st.markdown('**E.** Is this a new pattern or when the subway rescues the level of ' 
          'passenger demand near of previous COVID pandemic the old pattern will return?')
+        
+	st.markdown('**R.** Modelling task.')
 	
