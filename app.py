@@ -57,11 +57,11 @@ if __name__ == '__main__':
 	participation_measurement(option_graph_02, df, totals)
 
 	st.markdown('Questions:')
-	st.markdown('A. What can be caused by participation decreases of demand in lines 1 and 3,\n' 
-         	'are there significant changes in the infrastructure of the subway\n' 
+	st.markdown('<b>A.</b> What can be caused by participation decreases of demand in lines 1 and 3, ' 
+         	'are there significant changes in the infrastructure of the subway ' 
              '(new station or lines)?')
     
-	st.markdown('R. infrastructure changes - New stations in the subway')
+	st.markdown('<i>R.</i> infrastructure changes - New stations in the subway')
         
 	st.markdown('Line 1 - No changes')
 
@@ -84,12 +84,12 @@ if __name__ == '__main__':
 	line_15_df = pd.DataFrame(line_15)
 	st.write(line_15_df)
         
-	st.markdown('B. What\'s the reason for the increasing in passenger transported demand\n' 
+	st.markdown('<b>B.</b> What\'s the reason for the increasing in passenger transported demand ' 
          'in lines 5 and 15?')
 
-	st.markdown('C. If the main lines are decreasing the demand, is there the possibility\n' 
+	st.markdown('<b>C.</b> If the main lines are decreasing the demand, is there the possibility ' 
          'of other lines taking these positions in the next years?')
         
-	st.markdown('D. Is this a new pattern or when the subway rescues the level of\n' 
+	st.markdown('<b>D.</b> Is this a new pattern or when the subway rescues the level of ' 
          'passenger demand near of previous COVID pandemic the old pattern will return?')
 	
