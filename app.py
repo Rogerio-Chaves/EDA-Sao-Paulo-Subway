@@ -49,9 +49,8 @@ if __name__ == '__main__':
 
 	st.subheader('Lines 1 and 3 monthly participation in total of demand (in %) - Passenger transported demand by line')
 	most_participation(df, totals)
-	st.text('Question:')
-	st.text('If the monthly share of the two lines with the highest passenger demand\n' 
-         'is decreasing over time, is there any possibility that other lines are growing?')
+	st.markdown('Question:')
+	st.markdown('If the monthly share of the two lines with the highest passenger demand is decreasing over time, is there any possibility that other lines are growing?')
 
 	st.subheader('Monthly participation in total of demand (in %) by line')
 	option_graph_02 = st.selectbox(label='Line', options=[1, 2, 3, 4, 5, 15], index=0)
