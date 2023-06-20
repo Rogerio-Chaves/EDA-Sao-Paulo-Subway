@@ -84,12 +84,12 @@ if __name__ == '__main__':
 	line_15_df = pd.DataFrame(line_15)
 	st.write(line_15_df)
         
-	st.markdown('<b>B.</b> What\'s the reason for the increasing in passenger transported demand ' 
+	st.markdown('**B.** What\'s the reason for the increasing in passenger transported demand ' 
          'in lines 5 and 15?')
 
-	st.markdown('<b>C.</b> If the main lines are decreasing the demand, is there the possibility ' 
+	st.markdown('**C.** If the main lines are decreasing the demand, is there the possibility ' 
          'of other lines taking these positions in the next years?')
         
-	st.markdown(':bold[D.] Is this a new pattern or when the subway rescues the level of ' 
+	st.markdown('**D.** Is this a new pattern or when the subway rescues the level of ' 
          'passenger demand near of previous COVID pandemic the old pattern will return?')
 	
