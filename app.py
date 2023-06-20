@@ -45,7 +45,7 @@ if __name__ == '__main__':
 	color_lines = ['yellow', 'blue', 'green', 'red', 'purple', 'silver']
 	st.plotly_chart(px.line(df.reset_index(), x='year_month', y=option_graph_01, color='line', color_discrete_sequence=color_lines, title=f'Passengers transforted by line - {option_graph_01.capitalize()}'))
 
-	st.text('We can see the impact of COVID pandemic for passenger transported demand in the subway.')
+	st.markdown('We can see the impact of COVID pandemic for passenger transported demand in the subway.')
 
 	st.subheader('Lines 1 and 3 monthly participation in total of demand (in %) - Passenger transported demand by line')
 	most_participation(df, totals)
