@@ -1,5 +1,4 @@
 from datetime import datetime
-from matplotlib.style import use
 
 import matplotlib.dates as mdates
 import matplotlib.pyplot as plt
@@ -7,8 +6,6 @@ import numpy as np
 import pandas as pd
 import plotly.express as px
 import streamlit as st
-
-use('seaborn-v0_8')
 
 
 @st.cache_data
