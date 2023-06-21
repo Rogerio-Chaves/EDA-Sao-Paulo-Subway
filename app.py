@@ -103,7 +103,22 @@ if __name__ == '__main__':
 		ax.annotate(r, xy=(d, l),
                 xytext=(-3, np.sign(l)*3), textcoords="offset points", size='large',
                 horizontalalignment="right",
-                verticalalignment="bottom" if l > 0 else "top", bbox={'facecolor': line_colors[line], 'alpha': 0.5, 'pad': 10})
+                verticalalignment="bottom" if l > 0 else "top", bbox={'facecolor': line_colors[line], 'alpha': 0.75, 'pad': 10})
+
+	ax.annotate('Line 4 - Yellow', xy=(datetime.strptime('2022-01-01', "%Y-%m-%d"), -3),
+                xytext=(-3, np.sign(l)*3), textcoords="offset points", size='large',
+                horizontalalignment="right",
+                verticalalignment="bottom" if l > 0 else "top", bbox={'facecolor': 'yellow', 'alpha': 0.75, 'pad': 2})
+
+	ax.annotate('Line 5 - Lilac', xy=(datetime.strptime('2022-01-01', "%Y-%m-%d"), -4),
+                xytext=(-3, np.sign(l)*3), textcoords="offset points", size='large',
+                horizontalalignment="right",
+                verticalalignment="bottom" if l > 0 else "top", bbox={'facecolor': 'purple', 'alpha': 0.75, 'pad': 2})
+
+	ax.annotate('Line 15 - Silver', xy=(datetime.strptime('2022-01-01', "%Y-%m-%d"), -5),
+                xytext=(-3, np.sign(l)*3), textcoords="offset points", size='large',
+                horizontalalignment="right",
+                verticalalignment="bottom" if l > 0 else "top", bbox={'facecolor': 'silver', 'alpha': 0.75, 'pad': 2})
     
 	plt.setp(ax.get_xticklabels(), rotation=30, ha="right",fontsize=20)
 	ax.yaxis.set_visible(False)
