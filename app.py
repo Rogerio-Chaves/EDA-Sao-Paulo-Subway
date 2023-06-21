@@ -1,5 +1,7 @@
+from datetime import datetime
 from matplotlib.style import use
 
+import matplotlib.dates as mdates
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -64,52 +66,78 @@ if __name__ == '__main__':
 		'**Line 4 - yellow**, after the COVID period shows a growing pattern in demand for passengers in your line. '
 		'**Line 5 - lilac** kept a growing pattern until the begun 2021, next it has slowly decreasing. '
 		'Finally, **line 15 - silver** has a growing pattern in this period. Although, the participation of this line is small yet.')
-
-	st.markdown('Questions:')
-	st.markdown('**A.** Are there significant changes in the infrastructure of the subway (new station or lines)?')
-    
-	st.markdown('**R.** infrastructure changes - New stations in the subway')
         
-	st.markdown('Line 1 - No changes')
+	line_04 = {'station': ['São Paulo - Morumbi', 'Higienópolis - Mackenzie', 'Oscar Freire', 'Vila Sônia'],
+            'inauguration': ['2018-12-27', '2018-01-23', '2018-04-04', '2021-12-17'],
+            'line': [4, 4, 4, 4]}
+	line_04['inauguration'] = [datetime.strptime(d, "%Y-%m-%d") for d in line_04['inauguration']]
+        
+	line_05 = {'station':['Alto da Boa Vista', 'Borba Gato', 'Brooklin', 'Eucaliptos', 'Moema', 'Hospital São Paulo', 'Santa Cruz', 'Chácara Kablin', 'AACD - Servidor', 'Campo Belo'], 
+           'inauguration': ['2017-09-06', '2017-09-06', '2017-09-06', '2018-03-02', '2018-04-05', '2018-09-28', '2018-09-28', '2018-09-28', '2018-08-31', '2019-04-08'],
+          'line': [5, 5, 5, 5, 5, 5, 5, 5, 5, 5]}
+	line_05['inauguration'] = [datetime.strptime(d, "%Y-%m-%d") for d in line_05['inauguration']]
+        
+	line_15 = {'station':['São Lucas', 'Camilo Haddad', 'Vila Tolstói', 'Vila União', 'jardim Planalto', 'Sapopemba', 'Fazenda da Juta', 'São Mateus', 'jardim Colonial'], 
+           'inauguration':['2018-04-06', '2018-04-06', '2018-04-06', '2018-04-06', '2019-08-26', '2019-12-16', '2019-12-16', '2019-12-16', '2021-12-16'],
+          'line': [15, 15, 15, 15, 15, 15, 15, 15, 15]}
+	line_15['inauguration'] = [datetime.strptime(d, "%Y-%m-%d") for d in line_15['inauguration']]
 
-	st.markdown('Line 2 - No changes')
-
-	st.markdown('Line 3 - No changes')
-	
-	st.markdown('Line 4 - 4 new stations')
-	line_04 = {'Station': ['São Paulo - Morumbi', 'Higienópolis - Mackenzie', 'Oscar Freire', 'Vila Sônia'], 'Inauguration': ['December 27, 2018', 'January 23, 2018', 'April 4, 2018', 'December 17, 2021']}
 	line_04_df = pd.DataFrame(line_04)
-	st.write(line_04_df)
-	
-	st.markdown('Line 5 - 10 new stations')
-	line_05 = {'Station':['Alto da Boa Vista', 'Borba Gato', 'Brooklin', 'Eucaliptos', 'Moema', 'Hospital São Paulo', 'Santa Cruz', 'Chácara Kablin', 'AACD - Servidor', 'Campo Belo'], 'Inauguration': ['September 6, 2017', 'September 6, 2017', 'September 6, 2017', 'March 2, 2018', 'April 5, 2018', 'September 28, 2018', 'September 28, 2018', 'September 28, 2018', 'August 31, 2018', 'April 8, 2019']}
 	line_05_df = pd.DataFrame(line_05)
-	st.write(line_05_df)
-	
-	st.markdown('Line 15 - 9 new stations')
-	line_15 = {'Station':['São Lucas', 'Camilo Haddad', 'Vila Tolstói', 'Vila União', 'jardim Planalto', 'Sapopemba', 'Fazenda da Juta', 'São Mateus', 'jardim Colonial'], 'Inauguration':['April 6, 2018', 'April 6, 2018', 'April 6, 2018', 'April 6, 2018 ', 'August 26, 2019', 'December 16, 2019', 'December 16, 2019', 'December 16, 2019', 'December 16, 2021']}
 	line_15_df = pd.DataFrame(line_15)
-	st.write(line_15_df)
+    
+	df = pd.concat([line_04_df, line_05_df, line_15_df], axis=0)
+	df.sort_values(by='inauguration', inplace=True)
 
-	st.markdown('**B.** Are there significant changes in the infrastructure in the metropolitan transport network?')
-        
-	st.markdown('**R.** -------')
+	line_colors = {4: 'yellow', 5: 'purple', 15: 'silver'}
+	levels = np.tile([-9, 9, -7, 7 -5, 5, -3, 3, -1, 1],
+                 int(np.ceil(df.shape[0]/6)))[:df.shape[0]]
+	
+	st.subheader('infrastructure changes - New stations on the São Paulo Subway System - timeline')
 
-	st.markdown('**C.** What\'s the reason for the increasing in passenger transported demand in lines 5 and 15?')
-        
-	st.markdown('**R.** There are a big number of inaugurations of new stations for these lines, it can be a good reason.')
-        
-	st.markdown('**D.** What can be caused by participation decreases of demand in lines 1 and 3 ?')
-        
-	st.markdown('**R.** -------')
+	fig, ax = plt.subplots(figsize=(16, 8), layout="constrained")
+	ax.set_title('New stations on São Paulo Subway System - Timeline', fontsize=25)
 
-	st.markdown('**E.** If the main lines are decreasing the demand, is there the possibility ' 
-         'of other lines taking these positions in the next years?')
+	ax.vlines(list(df.inauguration), 0, levels, color="tab:red")  # The vertical stems.
+	ax.plot(list(df.inauguration), np.zeros_like(list(df.inauguration)), "-o",
+        color="k", markerfacecolor="w")  # Baseline and markers on it.
 
-	st.markdown('**R.** Modelling task.')
+	for d, l, r, line in zip(list(df.inauguration), levels, list(df.station), list(df.line)):
+		ax.annotate(r, xy=(d, l),
+                xytext=(-3, np.sign(l)*3), textcoords="offset points", size='large',
+                horizontalalignment="right",
+                verticalalignment="bottom" if l > 0 else "top", bbox={'facecolor': line_colors[line], 'alpha': 0.5, 'pad': 10})
+    
+	plt.setp(ax.get_xticklabels(), rotation=30, ha="right",fontsize=20)
+	ax.yaxis.set_visible(False)
+	ax.spines[["left", "top", "right"]].set_visible(False)
+	ax.margins(y=0.1)
+	st.pyplot(fig)
+
+	#st.markdown('Questions:')
+	#st.markdown('**A.** Are there significant changes in the infrastructure of the subway (new station or lines)?')
+    
+	#st.markdown('**R.** infrastructure changes - New stations in the subway')
+
+	#st.markdown('**B.** Are there significant changes in the infrastructure in the metropolitan transport network?')
         
-	st.markdown('**F.** Is this a new pattern or when the subway rescues the level of ' 
-         'passenger demand near of previous COVID pandemic the old pattern will return?')
+	#st.markdown('**R.** -------')
+
+	#st.markdown('**C.** What\'s the reason for the increasing in passenger transported demand in lines 5 and 15?')
         
-	st.markdown('**R.** Modelling task.')
+	#st.markdown('**R.** There are a big number of inaugurations of new stations for these lines, it can be a good reason.')
+        
+	#st.markdown('**D.** What can be caused by participation decreases of demand in lines 1 and 3 ?')
+        
+	#st.markdown('**R.** -------')
+
+	#st.markdown('**E.** If the main lines are decreasing the demand, is there the possibility ' 
+    #     'of other lines taking these positions in the next years?')
+
+	#st.markdown('**R.** Modelling task.')
+        
+	#st.markdown('**F.** Is this a new pattern or when the subway rescues the level of ' 
+    #     'passenger demand near of previous COVID pandemic the old pattern will return?')
+        
+	#st.markdown('**R.** Modelling task.')
 	
