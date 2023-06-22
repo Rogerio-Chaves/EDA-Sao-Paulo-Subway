@@ -1,4 +1,5 @@
 from datetime import datetime
+from Graphics import Graphics
 
 import matplotlib.dates as mdates
 import matplotlib.pyplot as plt
@@ -13,20 +14,6 @@ def load_data(PATH):
 	data = pd.read_csv(PATH, index_col='year_month')
 	return data	
 
-
-def participation_measurement(line, df, totals):
-    line_sum = df[df.loc[:,'line'] == line].loc[:,'total']
-    participation_line = (line_sum / totals) * 100
-    return st.plotly_chart(px.line({'Date': participation_line.index,'%': participation_line}, x='Date', y='%', title=f'Monthly participation in total of demand (in %) - Line {line}'))
-
-
-def most_participation(df, totals):
-    line_01_sum = df[df.loc[:,'line'] == 1].loc[:,'total']
-    line_03_sum = df[df.loc[:,'line'] == 3].loc[:,'total']
-    participation_line1_line2 = ((line_01_sum + line_03_sum) / totals) * 100
-
-    return st.plotly_chart(px.line({'Date':participation_line1_line2.index, '%':participation_line1_line2}, x='Date', y='%'))
-
 if __name__ == '__main__':
 	st.title('Passanger transported demand by lines - São Paulo Subway')
 	st.text('From January 2017 to April 2023')
@@ -37,24 +24,24 @@ if __name__ == '__main__':
 	df = load_data(DATA_PATH)
 	data_load_state.text('Done! (using st.cache_data)')
 
-	totals = df.groupby(by='year_month').sum().drop(labels='line', axis=1).loc[:,'total']
+	graphics = Graphics(df)
 
 	st.subheader('Passengers transforted by line - Metrics')
 	option_graph_01 = st.selectbox(label='Metric', options=df.columns[1:], index=0)
 	color_lines = ['yellow', 'blue', 'green', 'red', 'purple', 'silver']
-	st.plotly_chart(px.line(df.reset_index(), x='year_month', y=option_graph_01, color='line', color_discrete_sequence=color_lines, title=f'Passengers transforted by line - {option_graph_01.capitalize()}'))
-
+	graphics.metrics_graph(option_graph_01, color_lines)
 	st.markdown('We can see the impact of COVID pandemic for passenger transported demand in the subway.')
 
 	st.subheader('Lines 1 and 3 monthly participation in total of demand (in %) - Passenger transported demand by line')
-	most_participation(df, totals)
+	graphics.most_participation()
+
 	st.markdown('Question:')
 	st.markdown('If the monthly share of the two lines with the highest passenger demand is decreasing over time, is there any possibility that other lines are growing?')
 	st.markdown('Below we can verify the share of each line.')
 
 	st.subheader('Monthly participation in total of demand (in %) by line')
 	option_graph_02 = st.selectbox(label='Line', options=[1, 2, 3, 4, 5, 15], index=0)
-	participation_measurement(option_graph_02, df, totals)
+	graphics.participation_measurement(option_graph_02)
 
 	st.markdown('As we can see, '
 		'**Line 1 - blue** has kept the same participation after the COVID period. Although, it has decreased in the previous period. '
