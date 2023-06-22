@@ -35,7 +35,7 @@ if __name__ == '__main__':
 	st.subheader('Lines 1 and 3 monthly participation in total of demand (in %) - Passenger transported demand by line')
 	graphics.most_participation()
 
-	st.markdown('Question:')
+	st.markdown('#### Question:')
 	st.markdown('If the monthly share of the two lines with the highest passenger demand is decreasing over time, is there any possibility that other lines are growing?')
 	st.markdown('Below we can verify the share of each line.')
 
@@ -77,14 +77,15 @@ if __name__ == '__main__':
 	levels = np.tile([-9, 9, -7, 7 -5, 5, -3, 3, -1, 1],
                  int(np.ceil(df.shape[0]/6)))[:df.shape[0]]
 	
+	
 	st.subheader('infrastructure changes - New stations on the São Paulo Subway System - timeline')
 
 	fig, ax = plt.subplots(figsize=(16, 8), layout="constrained")
 	ax.set_title('New stations on São Paulo Subway System - Timeline', fontsize=25)
 
-	ax.vlines(list(df.inauguration), 0, levels, color="tab:red")  # The vertical stems.
+	ax.vlines(list(df.inauguration), 0, levels, color="tab:red")
 	ax.plot(list(df.inauguration), np.zeros_like(list(df.inauguration)), "-o",
-        color="k", markerfacecolor="w")  # Baseline and markers on it.
+        color="k", markerfacecolor="w")
 
 	for d, l, r, line in zip(list(df.inauguration), levels, list(df.station), list(df.line)):
 		ax.annotate(r, xy=(d, l),
@@ -113,10 +114,10 @@ if __name__ == '__main__':
 	ax.margins(y=0.1)
 	st.pyplot(fig)
 
-	#st.markdown('Questions:')
+	#st.markdown('#### Questions:')
 	#st.markdown('**A.** Are there significant changes in the infrastructure of the subway (new station or lines)?')
     
-	#st.markdown('**R.** infrastructure changes - New stations in the subway')
+	#st.markdown('**R.** Ininfrastructure changes - New stations in the subway')
 
 	#st.markdown('**B.** Are there significant changes in the infrastructure in the metropolitan transport network?')
         
