@@ -114,5 +114,5 @@ if __name__ == '__main__':
 	ax.margins(y=0.1)
 	st.pyplot(fig)
 
-	st.markdown('There are significant changes in the infrastructure in lines 5 - lilac and 15 - silver.')
+	st.markdown('It can explain the growth of the participation share of these lines in the passenger transported demand.')
     
