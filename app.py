@@ -78,7 +78,7 @@ if __name__ == '__main__':
                  int(np.ceil(df.shape[0]/6)))[:df.shape[0]]
 	
 	
-	st.subheader('infrastructure changes - New stations on the São Paulo Subway System - timeline')
+	st.subheader('Infrastructure changes - New stations on the São Paulo Subway System - timeline')
 
 	fig, ax = plt.subplots(figsize=(16, 8), layout="constrained")
 	ax.set_title('New stations on São Paulo Subway System - Timeline', fontsize=25)
@@ -114,30 +114,5 @@ if __name__ == '__main__':
 	ax.margins(y=0.1)
 	st.pyplot(fig)
 
-	#st.markdown('#### Questions:')
-	#st.markdown('**A.** Are there significant changes in the infrastructure of the subway (new station or lines)?')
+	st.markdown('There are significant changes in the infrastructure in lines 5 - lilac and 15 - silver.')
     
-	#st.markdown('**R.** Ininfrastructure changes - New stations in the subway')
-
-	#st.markdown('**B.** Are there significant changes in the infrastructure in the metropolitan transport network?')
-        
-	#st.markdown('**R.** -------')
-
-	#st.markdown('**C.** What\'s the reason for the increasing in passenger transported demand in lines 5 and 15?')
-        
-	#st.markdown('**R.** There are a big number of inaugurations of new stations for these lines, it can be a good reason.')
-        
-	#st.markdown('**D.** What can be caused by participation decreases of demand in lines 1 and 3 ?')
-        
-	#st.markdown('**R.** -------')
-
-	#st.markdown('**E.** If the main lines are decreasing the demand, is there the possibility ' 
-    #     'of other lines taking these positions in the next years?')
-
-	#st.markdown('**R.** Modelling task.')
-        
-	#st.markdown('**F.** Is this a new pattern or when the subway rescues the level of ' 
-    #     'passenger demand near of previous COVID pandemic the old pattern will return?')
-        
-	#st.markdown('**R.** Modelling task.')
-	
