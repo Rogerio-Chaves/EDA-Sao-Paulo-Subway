@@ -113,6 +113,4 @@ if __name__ == '__main__':
 	ax.spines[["left", "top", "right"]].set_visible(False)
 	ax.margins(y=0.1)
 	st.pyplot(fig)
-
-	st.markdown('It can explain the growth of the participation share of these lines in the passenger transported demand.')
-    
+   
